@@ -20,7 +20,7 @@ CREATE TABLE suppliers(
    CONSTRAINT `suppliers_fk_1` FOREIGN KEY(sup_cou_id) REFERENCES country(cou_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE category(
+CREATE TABLE categories(
    cat_id int(10) NOT NULL AUTO_INCREMENT,
    cat_name VARCHAR(50) NOT NULL,
    cat_parent_id int(10),
@@ -57,7 +57,7 @@ CREATE TABLE products(
    CONSTRAINT `products_suppliers_fk_1` FOREIGN KEY(pro_sup_id) REFERENCES suppliers(sup_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE employee(
+CREATE TABLE employees(
    emp_id int(10) NOT NULL AUTO_INCREMENT,
    emp_firstname VARCHAR(50),
    emp_lastname VARCHAR(50),
@@ -74,7 +74,7 @@ CREATE TABLE employee(
    CONSTRAINT `employees_country_fk_1` FOREIGN KEY(emp_cou_id) REFERENCES country(cou_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE customer(
+CREATE TABLE customers(
    cus_id  int(10) NOT NULL AUTO_INCREMENT,
    cus_firstname VARCHAR(50),
    cus_lastname VARCHAR(50),
