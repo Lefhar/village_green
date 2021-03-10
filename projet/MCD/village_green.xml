@@ -1,45 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <Database>
-   <Name>village_green</Name>
+   <Name>mld</Name>
    <Table>
-      <Name>suppliers</Name>
-      <Comment>Fournisseurs</Comment>
-      <Column>
-         <Name>sup_id</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>sup_firstname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>sup_lastname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>sup_address</Name>
-         <Type>VARCHAR(150)</Type>
-      </Column>
-      <Column>
-         <Name>sup_type</Name>
-         <Type>VARCHAR(50)</Type>
-         <Comment>constructeurs ou importateurs</Comment>
-      </Column>
-      <Column>
-         <Name>sup_cp</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>sup_city</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <PK>
-         <Key>sup_id</Key>
-      </PK>
-   </Table>
-   <Table>
-      <Name>category</Name>
+      <Name>categories</Name>
       <Comment>cat&#233;gorie</Comment>
       <Column>
          <Name>cat_id</Name>
@@ -86,6 +50,130 @@
       <PK>
          <Key>post_id</Key>
       </PK>
+   </Table>
+   <Table>
+      <Name>countries</Name>
+      <Column>
+         <Name>cou_id</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>cou_name</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <PK>
+         <Key>cou_id</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>suppliers</Name>
+      <Comment>Fournisseurs</Comment>
+      <Column>
+         <Name>sup_id</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>sup_firstname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>sup_lastname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>sup_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>sup_type</Name>
+         <Type>VARCHAR(50)</Type>
+         <Comment>constructeurs ou importateurs</Comment>
+      </Column>
+      <Column>
+         <Name>sup_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>sup_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>cou_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>sup_id</Key>
+      </PK>
+      <FK>
+         <Key>cou_id</Key>
+         <Reference>countries(cou_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>employees</Name>
+      <Comment>employ&#233;</Comment>
+      <Column>
+         <Name>emp_id</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>emp_firstname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_lastname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>emp_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>emp_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_tel</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>cou_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>dep_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>post_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>emp_id</Key>
+      </PK>
+      <AK>
+         <Key>dep_id</Key>
+      </AK>
+      <FK>
+         <Key>cou_id</Key>
+         <Reference>countries(cou_id)</Reference>
+      </FK>
+      <FK>
+         <Key>dep_id</Key>
+         <Reference>departments(dep_id)</Reference>
+      </FK>
+      <FK>
+         <Key>post_id</Key>
+         <Reference>posts(post_id)</Reference>
+      </FK>
    </Table>
    <Table>
       <Name>products</Name>
@@ -141,7 +229,7 @@
       </PK>
       <FK>
          <Key>cat_id</Key>
-         <Reference>category(cat_id)</Reference>
+         <Reference>categories(cat_id)</Reference>
       </FK>
       <FK>
          <Key>sup_id</Key>
@@ -149,63 +237,7 @@
       </FK>
    </Table>
    <Table>
-      <Name>employee</Name>
-      <Comment>employ&#233;</Comment>
-      <Column>
-         <Name>emp_id</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>emp_firstname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_lastname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_address</Name>
-         <Type>VARCHAR(150)</Type>
-      </Column>
-      <Column>
-         <Name>emp_cp</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>emp_city</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_tel</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>dep_id</Name>
-         <Type>INT</Type>
-         <Property>NOT NULL</Property>
-      </Column>
-      <Column>
-         <Name>post_id</Name>
-         <Type>INT</Type>
-         <Property>NOT NULL</Property>
-      </Column>
-      <PK>
-         <Key>emp_id</Key>
-      </PK>
-      <AK>
-         <Key>dep_id</Key>
-      </AK>
-      <FK>
-         <Key>dep_id</Key>
-         <Reference>departments(dep_id)</Reference>
-      </FK>
-      <FK>
-         <Key>post_id</Key>
-         <Reference>posts(post_id)</Reference>
-      </FK>
-   </Table>
-   <Table>
-      <Name>customer</Name>
+      <Name>customers</Name>
       <Comment>client</Comment>
       <Column>
          <Name>cus_id</Name>
@@ -236,12 +268,41 @@
          <Type>INT</Type>
       </Column>
       <Column>
+         <Name>cus_bill_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>cus_bill_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>cus_bill_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>cus_delivery_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>cus_delivery_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>cus_delivery_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
          <Name>cus_type</Name>
          <Type>VARCHAR(50)</Type>
       </Column>
       <Column>
          <Name>cus_coef</Name>
          <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>cou_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
       </Column>
       <Column>
          <Name>emp_id</Name>
@@ -252,8 +313,12 @@
          <Key>cus_id</Key>
       </PK>
       <FK>
+         <Key>cou_id</Key>
+         <Reference>countries(cou_id)</Reference>
+      </FK>
+      <FK>
          <Key>emp_id</Key>
-         <Reference>employee(emp_id)</Reference>
+         <Reference>employees(emp_id)</Reference>
       </FK>
    </Table>
    <Table>
@@ -283,6 +348,30 @@
          <Comment>date de livraison</Comment>
       </Column>
       <Column>
+         <Name>ord_bill_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>ord_bill_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>ord_bill_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>ord_delivery_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>ord_delivery_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>ord_delivery_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
          <Name>ord_status</Name>
          <Type>VARCHAR(50)</Type>
          <Comment>status de la commande</Comment>
@@ -297,7 +386,7 @@
       </PK>
       <FK>
          <Key>cus_id</Key>
-         <Reference>customer(cus_id)</Reference>
+         <Reference>customers(cus_id)</Reference>
       </FK>
    </Table>
    <Table>

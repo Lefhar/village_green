@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS `village_green`;
 CREATE DATABASE  `village_green`;
 USE `village_green`;
-CREATE TABLE country (
+CREATE TABLE countries (
   cou_id int(10) NOT NULL AUTO_INCREMENT,
   cou_name varchar(45) NOT NULL,
      PRIMARY KEY(cou_id)
