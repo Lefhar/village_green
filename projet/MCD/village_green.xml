@@ -7,7 +7,7 @@
       <Comment>Fournisseurs</Comment>
       <Column>
          <Name>sup_id</Name>
-         <Type>VARCHAR(50)</Type>
+         <Type>INT</Type>
       </Column>
       <Column>
          <Name>sup_firstname</Name>
@@ -83,18 +83,9 @@
          <Name>pos_name</Name>
          <Type>VARCHAR(50)</Type>
       </Column>
-      <Column>
-         <Name>dep_id</Name>
-         <Type>INT</Type>
-         <Property>NOT NULL</Property>
-      </Column>
       <PK>
          <Key>post_id</Key>
       </PK>
-      <FK>
-         <Key>dep_id</Key>
-         <Reference>departments(dep_id)</Reference>
-      </FK>
    </Table>
    <Table>
       <Name>products</Name>
@@ -142,7 +133,7 @@
       </Column>
       <Column>
          <Name>sup_id</Name>
-         <Type>VARCHAR(50)</Type>
+         <Type>INT</Type>
          <Property>NOT NULL</Property>
       </Column>
       <PK>
@@ -155,6 +146,62 @@
       <FK>
          <Key>sup_id</Key>
          <Reference>suppliers(sup_id)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>employee</Name>
+      <Comment>employ&#233;</Comment>
+      <Column>
+         <Name>emp_id</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>emp_firstname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_lastname</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_address</Name>
+         <Type>VARCHAR(150)</Type>
+      </Column>
+      <Column>
+         <Name>emp_cp</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>emp_city</Name>
+         <Type>VARCHAR(50)</Type>
+      </Column>
+      <Column>
+         <Name>emp_tel</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>dep_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>post_id</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>emp_id</Key>
+      </PK>
+      <AK>
+         <Key>dep_id</Key>
+      </AK>
+      <FK>
+         <Key>dep_id</Key>
+         <Reference>departments(dep_id)</Reference>
+      </FK>
+      <FK>
+         <Key>post_id</Key>
+         <Reference>posts(post_id)</Reference>
       </FK>
    </Table>
    <Table>
@@ -197,7 +244,7 @@
          <Type>INT</Type>
       </Column>
       <Column>
-         <Name>post_id</Name>
+         <Name>emp_id</Name>
          <Type>INT</Type>
          <Property>NOT NULL</Property>
       </Column>
@@ -205,51 +252,8 @@
          <Key>cus_id</Key>
       </PK>
       <FK>
-         <Key>post_id</Key>
-         <Reference>posts(post_id)</Reference>
-      </FK>
-   </Table>
-   <Table>
-      <Name>employee</Name>
-      <Comment>employ&#233;</Comment>
-      <Column>
-         <Name>emp_id</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_firstname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_lastname</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_address</Name>
-         <Type>VARCHAR(150)</Type>
-      </Column>
-      <Column>
-         <Name>emp_cp</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>emp_city</Name>
-         <Type>VARCHAR(50)</Type>
-      </Column>
-      <Column>
-         <Name>emp_tel</Name>
-         <Type>INT</Type>
-      </Column>
-      <Column>
-         <Name>dep_id</Name>
-         <Type>INT</Type>
-      </Column>
-      <PK>
          <Key>emp_id</Key>
-      </PK>
-      <FK>
-         <Key>dep_id</Key>
-         <Reference>departments(dep_id)</Reference>
+         <Reference>employee(emp_id)</Reference>
       </FK>
    </Table>
    <Table>
@@ -259,16 +263,29 @@
          <Type>INT</Type>
       </Column>
       <Column>
-         <Name>ord_order_date</Name>
+         <Name>ode_order_date</Name>
          <Type>DATETIME</Type>
+         <Comment>date de la commande</Comment>
       </Column>
       <Column>
-         <Name>ord_ship_date</Name>
+         <Name>ord_date_payment</Name>
          <Type>DATETIME</Type>
+         <Comment>date de payement</Comment>
+      </Column>
+      <Column>
+         <Name>ord_date_ship</Name>
+         <Type>DATETIME</Type>
+         <Comment>date d'exp&#233;dition</Comment>
+      </Column>
+      <Column>
+         <Name>ord_date_delivery</Name>
+         <Type>DATETIME</Type>
+         <Comment>date de livraison</Comment>
       </Column>
       <Column>
          <Name>ord_status</Name>
          <Type>VARCHAR(50)</Type>
+         <Comment>status de la commande</Comment>
       </Column>
       <Column>
          <Name>cus_id</Name>
