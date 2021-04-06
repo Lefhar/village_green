@@ -16,6 +16,22 @@ body {
     width: 100%;
     background-color: #e7e7e7;
 }
+@media screen and (max-width: 1200px) /*demenssion mobile*/
+    {
+        .logo{ 
+            width: 220px;
+            height: auto;
+       
+        }  
+    } 
+@media screen and (max-width: 640px) /*demenssion mobile*/
+    {
+
+        .logo{ 
+            width: 100px;
+            height: auto;
+        } 
+    } 
 .bg-menu-top {
     background-color: #e7e7e7;
     color: white;
@@ -163,8 +179,14 @@ footer {
 .counter span.warning{
     color:red;
 }
-.nav-link{
-    color:white; 
+.navbar-light .navbar-nav {
+   
+    color: black;
+    font-weight: bold;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+    font-weight: bold;
 }
 .bloque {
     color:white;

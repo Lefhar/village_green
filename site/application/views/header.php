@@ -57,22 +57,22 @@
           
               <nav class="navbar navbar-expand-lg navbar-light bg-menu-top">
             <!--bouton sur mobile-->
-            
+
               
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mr-5">
                       <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/index.php">Infos</a>
+                    <a class="nav-link nav-link-black" href="http://villagegreen.local/index.php">Infos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/annonces/liste">Espace client</a>
+                    <a class="nav-link nav-link-black" href="http://villagegreen.local/annonces/liste">Espace client</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/contact">Panier</a>
+                    <a class="nav-link nav-link-black" href="http://villagegreen.local/contact">Panier</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/about">Langue</a>
+                    <a class="nav-link nav-link-black" href="http://villagegreen.local/about">Langue</a>
                 </li>
                       </ul>
             <!--
@@ -85,17 +85,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mr-5">
                       <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/index.php">Produits</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/index.php">Produits</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/annonces/liste">Services</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/annonces/liste">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/contact">Aide</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/contact">Aide</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">A propos</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">A propos</a>
                     </li>            </ul>
    
             
@@ -104,42 +104,45 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-menu-three">
             <!--bouton sur mobile-->
             
-              
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mr-5">
                       <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/index.php">Guit/Bass</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/index.php">Guit/Bass</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/annonces/liste">Batteries</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/annonces/liste">Batteries</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/contact">Clavier</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/contact">Clavier</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://villagegreen.local/about">Studio</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/about">Studio</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">Sono</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">Sono</a>
                     </li>
 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">Eclairage</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">Eclairage</a>
                     </li>
 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">DJ</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">DJ</a>
                     </li>
 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">Cases</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">Cases</a>
                     </li>
 <li class="nav-item ">
-                    <a class="nav-link" href="http://villagegreen.local/users/connexion">Accessoires</a>
+                    <a class="nav-link nav-link-white" href="http://villagegreen.local/users/connexion">Accessoires</a>
                     </li>            </ul>
             <!--
                 barre de recherche dans la nav bar
             -->
             
         </div>
+        
     </nav>
     
     
