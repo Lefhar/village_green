@@ -805,7 +805,7 @@ let confirpassword = false
      function add_fields() {
         var d = document.getElementById("img");
      
-        d.innerHTML = '<br><input type="file" name="pro_photo" id="pro_photo" class="form-control-file" >';
+        d.innerHTML = '<br><input type="file" name="pro_photo" id="pro_photo" class="form-control-file" multiple>';
      }
 
 
@@ -893,3 +893,22 @@ $(".input-number").keydown(function (e) {
             e.preventDefault();
         }
     });
+
+    $(document).ready(function() {
+        $('input[type="file"]').on("change", function() {
+          let filenames = [];
+          let files = document.getElementById("an_photo").files;
+          if (files.length > 1) {
+            filenames.push("Total Files (" + files.length + ")");
+          } else {
+            for (let i in files) {
+              if (files.hasOwnProperty(i)) {
+                filenames.push(files[i].name);
+              }
+            }
+          }
+          $(this)
+            .next(".custom-file-label")
+            .html(filenames.join(","));
+        });
+      });
